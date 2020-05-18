@@ -11,5 +11,8 @@ module.exports = {
       enabled: true,
       runs: 200
     }
+  },
+  main: {
+    main: {main: "./src/index.html"}
   }
 }
