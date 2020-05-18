@@ -21,4 +21,14 @@ contract('TodoList', (accounts) => {
         const task = await this.todoList.tasks(taskCount)
         assert.equal(task.id.toNumber(), taskCount.toNumber())
     })
+
+    it('creates tasks', async() => {
+        const result = await this.todoList.createTask('Mocha Unit Test Task')
+        const taskCount = await this.todoList.taskCount()
+        assert.equal(taskCount, 2)
+        const event = result.logs[0].args   
+        assert.equal(event.id.toNumber(), 2)
+        assert.equal(event.content, 'Mocha Unit Test Task')
+        assert.equal(event.completed, false)
+    })
 })
