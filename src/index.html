@@ -24,6 +24,15 @@
 
       #content {
         display: none;
+        padding: 20px 10% 20px 10%;
+      }
+
+      .basic-header {
+          color: rgb(0, 119, 255);
+      }
+
+      .app-header {
+          color: rgb(0, 192, 0);
       }
 
       form {
@@ -46,7 +55,7 @@
       <h2 class="navbar-brand col-sm-3 col-md-2 mr-0" target="_blank">Ethereum Blockchain | Todo List</h2>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
-          <small><a class="nav-link" href="#"><span id="account"></span></a></small>
+          <small><a class="nav-link" href="#">Account: <span id="account"></span></a></small>
         </li>
       </ul>
     </nav>
@@ -57,6 +66,60 @@
             <p class="text-center">Loading...</p>
           </div>
           <div id="content">
+            <h3 class="basic-header">Introduction</h3>
+
+            <br/>
+            <p>
+                Welcome to my first attempt at creating an Ethereum-based DApp. This application involved learning
+                to connect an Ethereum wallet (primarily MetaMask), and then performing basic transactions.
+                It was written in basic HTML, JavaScript, and Solidity, though in the future I hope to create 
+                DApps which implement the React framework.
+
+                <br/><br/>
+
+                Learning to create this DApp was an extremely exciting and interesting first-foray into Blockchain development,
+                and I am extremely excited to continue learning more and developing more intricate and complicated DApps and other
+                Blockchain solutions.
+
+                <br/><br/>
+
+                Feel free to connect with me on any of the following social media links if you have any questions or suggestions
+                 on what I can learn next!
+            </p>
+            <ul>
+                <li>
+                    <a href="https://www.linkedin.com/in/esteban-hernandez-b93384128/">LinkedIn: Esteban Hernandez</a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/8Bit_Bento">Twitter: 8Bit_Bento</a>
+                </li>
+                <li>
+                    <a href="https://github.com/ehernandez8753">GitHub: Esteban Hernandez</a>
+                </li>
+                
+                
+            </ul>
+
+            <br/>
+            <h3 class="basic-header">Usage Instructions</h3>
+            <p>
+                In order to properly and safely use this test Todo-list DApp, it is recommended
+                that you do the following:
+            </p>
+            <ul>
+                <li>Install a personal Ethereum Blockchain, such as <a href="https://www.trufflesuite.com/ganache">Ganache</a></li>
+                <li>Make sure your personal Ethereum Blockchain is running (such as Ganache)</li>
+                <li>Make sure you have the MetaMask extension installed and enabled on your browser</li>
+                <li>Set up your personal Etherium Blockchain as an additional network in MetaMask</li>
+                <li>Add one of your local personal wallets to MetaMask</li>
+                <li>Enjoy the app!</li>
+            </ul>
+
+            <br/>
+            <hr/>
+            <br/>
+            <h3 class="app-header">Ethereum-Powered Todo List</h3>
+            <br/>
             <form onSubmit="App.createTask(); return false;">
               <input id="newTask" type="text" class="form-control" placeholder="Add task..." required>
               <input type="submit" hidden="">

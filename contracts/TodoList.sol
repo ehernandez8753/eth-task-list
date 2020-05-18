@@ -20,6 +20,11 @@ contract TodoList {
         bool completed
     );
 
+    event TaskCompleted(
+        uint id,
+        bool completed
+    );
+
     //Called when contract is called for the first time
     constructor() public {
         createTask("Test content initial task");
@@ -30,6 +35,16 @@ contract TodoList {
         tasks[taskCount] = Task(taskCount, _content, false);
         //Emit triggers an event
         emit TaskCreated(taskCount, _content, false);
+    }
+
+    function toggleCompleted(uint _id) public {
+        //Get task from list
+        Task memory _task = tasks[_id];
+        _task.completed = !_task.completed;
+        //Put task back into mapping
+        tasks[_id] = _task;
+        //Trigger event
+        emit TaskCompleted(_id, _task.completed);
     }
 
 }
